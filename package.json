@@ -1,0 +1,26 @@
+{
+  "name": "christianrijke.de",
+  "version": "0.0.1",
+  "description": "My personal blog/CV/portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/crijke/christianrijke.de"
+  },
+  "keywords": [
+    "website",
+    "blog",
+    "cv",
+    "resume"
+  ],
+  "private": true,
+  "author": "Christian Rijke",
+  "license": "ISC",
+  "devDependencies": {
+    "tachyons": "^4.8.1"
+  },
+  "dependencies": {}
+}
