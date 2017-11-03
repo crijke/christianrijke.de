@@ -4,7 +4,8 @@
   "description": "My personal blog/CV/portfolio",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "start": "autoreload-server --mount.watch=\"**/**.{html,css,js}\" --list-directory=false ./src 8000"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,7 @@
   "author": "Christian Rijke",
   "license": "ISC",
   "devDependencies": {
-    "tachyons": "^4.8.1"
-  },
-  "dependencies": {}
+    "tachyons": "^4.8.1",
+    "simple-autoreload-server": "^0.2.7"
+  }
 }
