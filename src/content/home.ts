@@ -8,7 +8,7 @@ export const home = {
   /** Show the "What I focus on" grid in About. */
   showFocusAreas: false,
   /** Show the "Selected work" case studies. */
-  showWork: true,
+  showWork: false,
   /**
    * Show open-source projects as their own section. When false, they appear at the end of
    * "Selected work" instead (if that is shown).
