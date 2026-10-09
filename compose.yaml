@@ -1,0 +1,11 @@
+services:
+  website:
+    build: .
+    image: christianrijke.de:latest
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp
+    # Only reachable through the reverse proxy on the host.
+    ports:
+      - '127.0.0.1:8080:8080'

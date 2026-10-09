@@ -1,0 +1,30 @@
+---
+import { profile } from '../content/profile';
+import { SectionNav } from './SectionNav';
+import { ThemeToggle } from './ThemeToggle';
+
+interface Props {
+  /** Prefix for section anchors on pages other than the home page. */
+  basePath?: string;
+}
+
+const { basePath = '' } = Astro.props;
+---
+
+<header class="site-header sticky top-0 z-40 border-b border-line bg-paper/85 backdrop-blur-md">
+  <div class="container-page flex h-(--header-height) flex-wrap content-center items-center justify-between gap-x-8 sm:flex-nowrap">
+    <a href="/" class="font-semibold tracking-tight">
+      {profile.name}
+    </a>
+    <SectionNav
+      client:idle
+      basePath={basePath}
+      className="order-last w-full sm:order-none sm:ml-auto sm:w-auto"
+    />
+    <ThemeToggle client:load />
+  </div>
+  <div
+    aria-hidden="true"
+    class="scroll-progress absolute inset-x-0 -bottom-px h-px origin-left bg-accent"
+  ></div>
+</header>

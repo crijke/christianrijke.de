@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<BaseLayout title={title} noindex>
+  <article lang="de" class="container-page max-w-3xl py-16 sm:py-24">
+    <h1 class="text-3xl font-semibold tracking-tight sm:text-4xl">{title}</h1>
+    <div class="mt-10 space-y-4 leading-relaxed [&_a]:link [&_h2]:pt-6 [&_h2]:text-lg [&_h2]:font-semibold">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

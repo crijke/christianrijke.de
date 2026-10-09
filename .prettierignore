@@ -1,0 +1,6 @@
+dist/
+.astro/
+specs/
+test-results/
+playwright-report/
+package-lock.json
