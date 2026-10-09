@@ -14,6 +14,8 @@ export const home = {
    * "Selected work" instead (if that is shown).
    */
   showProjects: true,
+  /** Show the reading-progress strip along the bottom of the header (on every page). */
+  showScrollProgress: true,
 };
 
 const hidden = new Set<SectionId>([
