@@ -15,6 +15,7 @@ export interface Project {
   role: string;
   description: string;
   href: string;
+  stack?: string[];
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -80,6 +81,7 @@ export const projects: Project[] = [
     description:
       'A map that connects people with community-supported agriculture farms across Germany. I’m currently relaunching the frontend, built end-to-end with agentic AI workflows.',
     href: 'https://ernte-teilen.org',
+    stack: ['TypeScript', 'React', 'TanStack Query', 'Tailwind CSS', 'Node.js', 'Express'],
   },
   {
     name: 'Datenguide',
@@ -88,5 +90,6 @@ export const projects: Project[] = [
     description:
       'Made official German statistics accessible to journalists and the public: a GraphQL and REST API on top of Federal Statistical Office data, and a web UI for queries. Funded by the Prototype Fund.',
     href: 'https://github.com/datenguide',
+    stack: ['GraphQL', 'Node.js', 'React', 'Next.js', 'Gatsby', 'Material UI'],
   },
 ];

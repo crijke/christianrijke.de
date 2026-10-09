@@ -1,6 +1,6 @@
 import { act, render, screen } from '@testing-library/react';
 import { vi } from 'vitest';
-import { sections } from '../content/profile';
+import { homeSections as sections } from '../content/home';
 import { SectionNav } from './SectionNav';
 
 type Callback = (entries: Partial<IntersectionObserverEntry>[]) => void;

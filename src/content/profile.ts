@@ -21,9 +21,11 @@ export const profile = {
   [key: string]: unknown;
 };
 
+/** Every section the home page can show, in page order. */
 export const sections = [
   { id: 'about', label: 'About' },
   { id: 'work', label: 'Work' },
+  { id: 'projects', label: 'Projects' },
   { id: 'experience', label: 'Experience' },
   { id: 'skills', label: 'Skills' },
   { id: 'contact', label: 'Contact' },
