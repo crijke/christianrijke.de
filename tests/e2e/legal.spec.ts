@@ -17,9 +17,9 @@ test('section links on other pages lead back to the home page', async ({ page })
 
   await page
     .getByRole('navigation', { name: 'Sections' })
-    .getByRole('link', { name: 'Work' })
+    .getByRole('link', { name: 'Experience' })
     .click();
 
-  await expect(page).toHaveURL(/\/#work$/);
-  await expect(page.locator('#work')).toBeInViewport();
+  await expect(page).toHaveURL(/\/#experience$/);
+  await expect(page.locator('#experience')).toBeInViewport();
 });

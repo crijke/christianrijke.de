@@ -1,6 +1,6 @@
 import { act, render, screen } from '@testing-library/react';
 import { vi } from 'vitest';
-import { sections } from '../content/profile';
+import { homeSections as sections } from '../content/home';
 import { SectionNav } from './SectionNav';
 
 type Callback = (entries: Partial<IntersectionObserverEntry>[]) => void;
@@ -62,14 +62,17 @@ describe('SectionNav', () => {
     render(<SectionNav />);
     expect(screen.queryByRole('link', { current: true })).not.toBeInTheDocument();
 
-    intersect('work', true);
-    expect(screen.getByRole('link', { current: true })).toHaveTextContent('Work');
+    // Independent of which sections the home page config enables.
+    const [first, second] = sections;
 
-    intersect('work', false);
-    intersect('experience', true);
-    expect(screen.getByRole('link', { current: true })).toHaveTextContent('Experience');
+    intersect(first.id, true);
+    expect(screen.getByRole('link', { current: true })).toHaveTextContent(first.label);
 
-    intersect('experience', false);
+    intersect(first.id, false);
+    intersect(second.id, true);
+    expect(screen.getByRole('link', { current: true })).toHaveTextContent(second.label);
+
+    intersect(second.id, false);
     expect(screen.queryByRole('link', { current: true })).not.toBeInTheDocument();
   });
 
@@ -84,6 +87,8 @@ describe('SectionNav', () => {
       window.dispatchEvent(new Event('scroll'));
     });
 
-    expect(screen.getByRole('link', { current: true })).toHaveTextContent('Contact');
+    expect(screen.getByRole('link', { current: true })).toHaveTextContent(
+      sections[sections.length - 1].label,
+    );
   });
 });

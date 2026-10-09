@@ -1,4 +1,5 @@
 ---
+import { home } from '../content/home';
 import { profile } from '../content/profile';
 import { SectionNav } from './SectionNav';
 import { ThemeToggle } from './ThemeToggle';
@@ -23,8 +24,10 @@ const { basePath = '' } = Astro.props;
     />
     <ThemeToggle client:load />
   </div>
-  <div
-    aria-hidden="true"
-    class="scroll-progress absolute inset-x-0 -bottom-px h-px origin-left bg-accent"
-  ></div>
+  {home.showScrollProgress && (
+    <div
+      aria-hidden="true"
+      class="scroll-progress absolute inset-x-0 -bottom-px h-px origin-left bg-accent"
+    />
+  )}
 </header>

@@ -13,7 +13,7 @@ export function Contact({ actions }: ContactProps) {
     <Section
       id="contact"
       title="Contact"
-      intro="Want to talk about a team you’re building, a hard frontend problem, or anything on this page? I’m happy to hear from you. Email works best."
+      intro="Want to talk about a team you’re building, a software project, or anything on this page? I’m happy to hear from you. Email works best."
     >
       <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
         <a

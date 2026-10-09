@@ -1,5 +1,5 @@
 import { caseStudies, projects, type CaseStudy } from '../content/work';
-import { ExternalLink } from './ExternalLink';
+import { ProjectCard } from './ProjectCard';
 import { Section } from './Section';
 
 function CaseStudyCard({ study }: { study: CaseStudy }) {
@@ -41,7 +41,12 @@ function CaseStudyCard({ study }: { study: CaseStudy }) {
   );
 }
 
-export function Work() {
+interface WorkProps {
+  /** List open-source projects below the case studies. */
+  showProjects?: boolean;
+}
+
+export function Work({ showProjects = true }: WorkProps) {
   return (
     <Section
       id="work"
@@ -54,20 +59,18 @@ export function Work() {
         ))}
       </div>
 
-      <h3 className="mt-20 text-xl font-semibold tracking-tight">Open source</h3>
-      <ul className="mt-8 grid gap-6 sm:grid-cols-2">
-        {projects.map((project) => (
-          <li key={project.name} className="reveal rounded-2xl bg-surface p-6 sm:p-8">
-            <p className="eyebrow">
-              {project.role} · {project.period}
-            </p>
-            <h4 className="mt-3 text-lg font-semibold">
-              <ExternalLink href={project.href}>{project.name}</ExternalLink>
-            </h4>
-            <p className="mt-3 leading-relaxed text-muted">{project.description}</p>
-          </li>
-        ))}
-      </ul>
+      {showProjects && (
+        <>
+          <h3 className="mt-20 text-xl font-semibold tracking-tight">Open source</h3>
+          <ul className="mt-8 grid gap-6 sm:grid-cols-2">
+            {projects.map((project) => (
+              <li key={project.name}>
+                <ProjectCard project={project} headingLevel={4} />
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
     </Section>
   );
 }

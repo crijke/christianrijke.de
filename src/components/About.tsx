@@ -1,7 +1,11 @@
 import { facts, focusAreas } from '../content/profile';
 import { Section } from './Section';
 
-export function About() {
+interface AboutProps {
+  showFocusAreas?: boolean;
+}
+
+export function About({ showFocusAreas = true }: AboutProps) {
   return (
     <Section id="about" title="About">
       <div className="grid gap-12 lg:grid-cols-[1fr_20rem] lg:gap-20 xl:grid-cols-[1fr_24rem]">
@@ -16,7 +20,7 @@ export function About() {
             Since then my focus has moved to the web frontend, though rarely just the surface of it.
             Most of my work is on applications with real complexity, on the design systems behind
             them, and on architectures that let several teams ship into one product. Most recently I
-            spent three years on the frontend platform team of Lexware Office.
+            spent three years working with the frontend platform team of Lexware Office.
           </p>
           <p>
             I still work across the stack when a project calls for it, with Node.js, AWS or Java and
@@ -33,15 +37,19 @@ export function About() {
         </dl>
       </div>
 
-      <h3 className="mt-20 text-xl font-semibold tracking-tight">What I focus on</h3>
-      <ul className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2">
-        {focusAreas.map((area) => (
-          <li key={area.title} className="bg-paper p-6 sm:p-8">
-            <h4 className="font-semibold">{area.title}</h4>
-            <p className="mt-2 leading-relaxed text-muted">{area.description}</p>
-          </li>
-        ))}
-      </ul>
+      {showFocusAreas && (
+        <>
+          <h3 className="mt-20 text-xl font-semibold tracking-tight">What I focus on</h3>
+          <ul className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2">
+            {focusAreas.map((area) => (
+              <li key={area.title} className="bg-paper p-6 sm:p-8">
+                <h4 className="font-semibold">{area.title}</h4>
+                <p className="mt-2 leading-relaxed text-muted">{area.description}</p>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
     </Section>
   );
 }

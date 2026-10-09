@@ -13,15 +13,19 @@ test.describe('home page', () => {
     await expect(page.getByRole('img', { name: 'Portrait of Christian Rijke' })).toBeVisible();
   });
 
-  test('has one heading per section, in navigation order', async ({ page }) => {
-    const headings = page.getByRole('heading', { level: 2 });
-    await expect(headings).toHaveText([
-      'About',
-      'Selected work',
-      'Experience',
-      'Skills',
-      'Contact',
-    ]);
+  test('navigation links every section on the page, in page order', async ({ page }) => {
+    const linkedIds = await page
+      .getByRole('navigation', { name: 'Sections' })
+      .getByRole('link')
+      .evaluateAll((links) => links.map((link) => link.getAttribute('href')?.replace('#', '')));
+    const sectionIds = await page
+      .locator('main > section[id]')
+      .evaluateAll((sections) => sections.map((section) => section.id));
+
+    expect(linkedIds).toEqual(sectionIds);
+    for (const id of sectionIds) {
+      await expect(page.locator(`#${id} h2`)).toHaveCount(1);
+    }
   });
 
   test('navigates to sections and marks the current one', async ({ page }) => {

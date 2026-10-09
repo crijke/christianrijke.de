@@ -6,8 +6,10 @@ import { Contact } from '../components/Contact';
 import { CopyEmailButton } from '../components/CopyEmailButton';
 import { Experience } from '../components/Experience';
 import { Hero } from '../components/Hero';
+import { Projects } from '../components/Projects';
 import { Skills } from '../components/Skills';
 import { Work } from '../components/Work';
+import { home } from '../content/home';
 import { profile } from '../content/profile';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
@@ -28,8 +30,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       fetchpriority="high"
     />
   </Hero>
-  <About />
-  <Work />
+  <About showFocusAreas={home.showFocusAreas} />
+  {home.showWork && <Work showProjects={!home.showProjects} />}
+  {home.showProjects && <Projects />}
   <Experience />
   <Skills />
   <Contact>
