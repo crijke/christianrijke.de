@@ -4,7 +4,6 @@ import { profile } from '../content/profile';
 ---
 
 <LegalPage title="Impressum">
-  <h2>Angaben gemäß § 18 Abs. 1 MStV</h2>
   <p>
     {profile.name}
     <br />
@@ -13,9 +12,10 @@ import { profile } from '../content/profile';
     <br />
     Deutschland
   </p>
-
   <h2>Kontakt</h2>
   <p>
     E-Mail: <a href={`mailto:${profile.email}`}>{profile.email}</a>
   </p>
+  <h2>USt-IdNr.</h2>
+  <p>DE301495236</p>
 </LegalPage>

@@ -15,7 +15,7 @@ export const home = {
    */
   showProjects: true,
   /** Show the reading-progress strip along the bottom of the header (on every page). */
-  showScrollProgress: true,
+  showScrollProgress: false,
 };
 
 const hidden = new Set<SectionId>([
