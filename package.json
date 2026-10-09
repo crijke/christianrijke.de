@@ -1,27 +1,59 @@
 {
   "name": "christianrijke.de",
-  "version": "0.0.1",
-  "description": "My personal blog/CV/portfolio",
-  "main": "index.js",
-  "scripts": {
-    "test": "npm test",
-    "start": "autoreload-server --mount.watch=\"**/**.{html,css,js}\" --list-directory=false ./src 8000"
-  },
-  "repository": {
-    "type": "git",
-    "url": "github.com/crijke/christianrijke.de"
-  },
-  "keywords": [
-    "website",
-    "blog",
-    "cv",
-    "resume"
-  ],
+  "description": "Personal website of Christian Rijke, software engineer",
   "private": true,
-  "author": "Christian Rijke",
-  "license": "ISC",
+  "type": "module",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "verify": "npm run format:check && npm run lint && npm run check && npm test && npm run build && npm run test:e2e"
+  },
+  "dependencies": {
+    "@astrojs/react": "^7.0.0",
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource-variable/geist": "^5.3.0",
+    "@fontsource-variable/geist-mono": "^5.3.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.5",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tailwindcss": "^4.3.3"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  },
   "devDependencies": {
-    "tachyons": "^4.8.1",
-    "simple-autoreload-server": "^0.2.7"
+    "@astrojs/check": "^0.9.10",
+    "@axe-core/playwright": "^4.13.0",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.63.0",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^10.12.0",
+    "eslint-plugin-astro": "^3.2.1",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.13.0",
+    "jsdom": "^30.1.2",
+    "prettier": "^3.9.9",
+    "prettier-plugin-astro": "^1.1.0",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.71.1",
+    "vitest": "^5.0.3"
   }
 }

@@ -1,0 +1,38 @@
+---
+import { Picture } from 'astro:assets';
+import portrait from '../assets/portrait.jpg';
+import { About } from '../components/About';
+import { Contact } from '../components/Contact';
+import { CopyEmailButton } from '../components/CopyEmailButton';
+import { Experience } from '../components/Experience';
+import { Hero } from '../components/Hero';
+import { Skills } from '../components/Skills';
+import { Work } from '../components/Work';
+import { profile } from '../content/profile';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <Hero>
+    <Picture
+      slot="portrait"
+      src={portrait}
+      alt={`Portrait of ${profile.name}`}
+      width={768}
+      height={960}
+      fit="cover"
+      widths={[192, 384, 576, 768]}
+      sizes="(min-width: 80rem) 24rem, (min-width: 64rem) 20rem, (min-width: 40rem) 9rem, 7rem"
+      formats={['avif', 'webp']}
+      loading="eager"
+      fetchpriority="high"
+    />
+  </Hero>
+  <About />
+  <Work />
+  <Experience />
+  <Skills />
+  <Contact>
+    <CopyEmailButton slot="actions" client:idle email={profile.email} />
+  </Contact>
+</BaseLayout>
