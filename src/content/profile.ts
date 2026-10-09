@@ -16,6 +16,7 @@ export const profile = {
     xing: { label: 'Xing', href: 'https://www.xing.com/profile/Christian_Rijke' },
   },
   source: 'https://github.com/crijke/christianrijke.de',
+  portraitCredit: { label: 'Studio 23', href: 'https://www.bewerbungsfotos-friedrichshain.com/' },
 } as const satisfies {
   links: Record<string, Link>;
   [key: string]: unknown;

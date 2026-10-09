@@ -4,7 +4,7 @@ import { profile } from '../content/profile';
 ---
 
 <LegalPage title="Impressum">
-  <h2>Angaben gemäß § 5 DDG</h2>
+  <h2>Angaben gemäß § 18 Abs. 1 MStV</h2>
   <p>
     {profile.name}
     <br />
@@ -18,7 +18,4 @@ import { profile } from '../content/profile';
   <p>
     E-Mail: <a href={`mailto:${profile.email}`}>{profile.email}</a>
   </p>
-
-  <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
-  <p>{profile.name}, Anschrift wie oben</p>
 </LegalPage>
