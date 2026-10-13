@@ -79,7 +79,7 @@ export const projects: Project[] = [
     period: 'Since 2013',
     role: 'Co-initiator & maintainer',
     description:
-      'A map that connects people with community-supported agriculture farms across Germany, Austria and Switzerland. I’m currently relaunching the frontend, built with agentic AI workflows.',
+      'An interactive map that connects people with community-supported agriculture farms across Germany, Austria and Switzerland. We work with several partner organizations like Netzwerk Solidarische Landwirtschaft in Germany, FRACP in Switzerland and Solawi Leben in Austria.',
     href: 'https://ernte-teilen.org',
     stack: ['TypeScript', 'React', 'TanStack Query', 'Tailwind CSS', 'Node.js', 'Express'],
   },
