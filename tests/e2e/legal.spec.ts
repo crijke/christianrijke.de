@@ -12,14 +12,11 @@ test('legal pages are linked from the footer and kept out of search results', as
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Datenschutzerklärung');
 });
 
-test('section links on other pages lead back to the home page', async ({ page }) => {
+test('other pages link back to the home page', async ({ page }) => {
   await page.goto('/imprint');
 
-  await page
-    .getByRole('navigation', { name: 'Sections' })
-    .getByRole('link', { name: 'Experience' })
-    .click();
+  await page.getByRole('banner').getByRole('link', { name: 'Christian Rijke' }).click();
 
-  await expect(page).toHaveURL(/\/#experience$/);
-  await expect(page.locator('#experience')).toBeInViewport();
+  await expect(page).toHaveURL(/\/$/);
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Christian Rijke');
 });

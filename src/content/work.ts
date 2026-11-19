@@ -1,95 +1,132 @@
-export interface CaseStudy {
-  id: string;
-  title: string;
+export interface Role {
+  start: number;
+  end?: number;
   organisation: string;
-  period: string;
-  context: string;
-  contribution: string;
-  outcome: string;
-  stack: string[];
+  title: string;
+  summary: string;
 }
 
-export interface Project {
-  name: string;
-  period: string;
-  role: string;
-  description: string;
-  href: string;
-  stack?: string[];
-}
-
-export const caseStudies: CaseStudy[] = [
+/** Roles, newest first. */
+export const roles: Role[] = [
   {
-    id: 'lexware-micro-frontends',
-    title: 'From separate apps to one product',
+    start: 2023,
+    end: 2026,
     organisation: 'Haufe · Lexware Office',
-    period: '2023–2026',
-    context:
-      'Lexware Office was made up of separate, linked single-page apps owned by different teams. Users noticed every boundary between them.',
-    contribution:
-      'Validated the approach with proofs of concept, designed a micro-frontend architecture based on Module Federation with a shared app shell, and drove the migration together with the feature teams. Maintained and modernised the MUI-based design system those teams build on.',
-    outcome:
-      'Teams share runtime components and ship one coherent product instead of visible app boundaries.',
-    stack: ['TypeScript', 'React', 'Module Federation', 'MUI', 'AWS'],
+    title: 'Senior Frontend Engineer',
+    summary:
+      'Frontend platform team: design system, micro-frontend architecture with a shared app shell, frontend standards, and agentic coding workflows across engineering.',
   },
   {
-    id: 'scout24-identity',
-    title: 'Personal accounts for B2B customers',
+    start: 2023,
+    organisation: 'Netzwerk Solidarische Landwirtschaft',
+    title: 'Full-Stack Engineer',
+    summary:
+      'New React frontend for Ernte Teilen, plus a Node.js and Express API for email campaigns and user account management.',
+  },
+  {
+    start: 2021,
+    end: 2022,
     organisation: 'Scout24',
-    period: '2021–2022',
-    context:
-      'B2B customers shared logins across their employees, which no longer met current security standards.',
-    contribution:
-      'Defined the frontend architecture of the single-page app that moves customers to individual accounts with 2FA. On the backend, helped introduce Okta as the company-wide identity platform: integration with the API gateway, auth server and SSO service, plus batch and real-time migration services for all user accounts.',
-    outcome:
-      'One identity platform across the company, and personal, 2FA-secured accounts for every employee of a B2B customer.',
-    stack: ['TypeScript', 'React', 'Java', 'Spring Boot', 'DynamoDB', 'AWS'],
+    title: 'Full-Stack Engineer',
+    summary:
+      'Account migration SPA, Spring Boot services that migrated all user accounts to the company-wide Okta platform, API usage reporting and a self-service portal for B2B customers.',
   },
   {
-    id: 'edeka-assortment-planning',
-    title: 'Assortment planning for EDEKA',
-    organisation: 'IBM iX',
-    period: '2020–2021',
-    context:
-      'A data-heavy planning application had grown out of a prototype with architectural and performance problems, and two teams were about to build on it.',
-    contribution:
-      'Fixed the critical issues, specified a new frontend architecture for both teams, implemented the application layer and defined the application-level API with the backend team. Improved automated and manual testing practices.',
-    outcome:
-      'Both teams worked on a shared, documented architecture with a clear contract to the backend.',
-    stack: ['JavaScript', 'React', 'Redux', 'Material UI'],
+    start: 2020,
+    end: 2021,
+    organisation: 'IBM iX Berlin',
+    title: 'Frontend Architect & Engineer',
+    summary:
+      'Frontend architecture and the API contract with the backend team for EDEKA’s assortment planning application; relaunch of the Basler Versicherungen corporate websites.',
   },
   {
-    id: 'lufthansa-platform',
-    title: 'A shared frontend platform for lufthansa.com',
-    organisation: 'IBM',
-    period: '2017–2018',
-    context:
-      'Lufthansa rewrote its legacy web platform as a common React frontend and design system for lufthansa.com and its Star Alliance partner airlines.',
-    contribution:
-      'Specified and implemented the integration of React components into Adobe Experience Manager. Led architecture improvements such as common API error handling, schema-based validation and wrappers for legacy components, and implemented WCAG accessibility requirements.',
-    outcome:
-      'One accessible component platform for lufthansa.com and partner airline sites, integrated into the existing CMS.',
-    stack: ['JavaScript', 'React', 'Redux', 'Adobe Experience Manager'],
+    start: 2019,
+    end: 2020,
+    organisation: 'Datenguide',
+    title: 'Full-Stack Engineer',
+    summary:
+      'GraphQL and REST APIs in Node.js for official statistics, a React query UI and the project website.',
+  },
+  {
+    start: 2019,
+    organisation: 'XING Marketing Solutions',
+    title: 'Frontend Engineer',
+    summary:
+      'Unified employer profile pages with company news and native ads, including ad preview components.',
+  },
+  {
+    start: 2018,
+    end: 2019,
+    organisation: 'Sparwelt (RTL Group)',
+    title: 'Frontend Engineer',
+    summary:
+      'Company-wide design system in Vue.js and the first e-commerce products relaunched on it.',
+  },
+  {
+    start: 2017,
+    end: 2018,
+    organisation: 'IBM Hamburg',
+    title: 'Frontend Engineer',
+    summary:
+      'React platform and design system for a major German airline, integrated into Adobe Experience Manager.',
+  },
+  {
+    start: 2017,
+    organisation: 'Lautsprecher Teufel',
+    title: 'Full-Stack Engineer',
+    summary:
+      'Test automation DSL for QA on top of the device APIs, and REST APIs for low-level hardware features.',
+  },
+  {
+    start: 2016,
+    end: 2017,
+    organisation: 'Springer Nature',
+    title: 'Full-Stack Engineer',
+    summary:
+      'Migrated a monolithic J2EE shop and publishing platform to containerised services, with UI tests, performance testing and monitoring.',
+  },
+  {
+    start: 2014,
+    end: 2016,
+    organisation: 'Lautsprecher Teufel',
+    title: 'Full-Stack Developer',
+    summary:
+      'Service architecture for the Raumfeld Wi-Fi speakers: update and media servers, analytics, internal dashboards and a desktop streaming app.',
+  },
+  {
+    start: 2012,
+    end: 2013,
+    organisation: 'Finn GmbH · OpenProject',
+    title: 'Full-Stack Developer',
+    summary:
+      'Plugin architecture on Ruby on Rails, an AngularJS frontend prototype and performance analysis for the open-source project management suite.',
+  },
+  {
+    start: 2009,
+    end: 2012,
+    organisation: 'SIX Group',
+    title: 'Application Engineer',
+    summary:
+      'SEPA payment processing and batch performance for a European card acquiring platform; CI, releases and deployment automation.',
+  },
+  {
+    start: 2008,
+    end: 2009,
+    organisation: 'NICTA',
+    title: 'Software Engineer',
+    summary:
+      'Eclipse-based IDE for the Goanna static analysis and verification tool, built remotely for the research team in Sydney.',
+  },
+  {
+    start: 2006,
+    end: 2008,
+    organisation: 'BSI',
+    title: 'Software Engineer',
+    summary:
+      'Point-of-sale and CRM clients for Swiss Federal Railways, PostFinance and Swiss Life.',
   },
 ];
 
-export const projects: Project[] = [
-  {
-    name: 'Ernte Teilen',
-    period: 'Since 2013',
-    role: 'Co-initiator & maintainer',
-    description:
-      'An interactive map that connects people with community-supported agriculture farms across Germany, Austria and Switzerland. We work with several partner organizations like Netzwerk Solidarische Landwirtschaft in Germany, FRACP in Switzerland and Solawi Leben in Austria.',
-    href: 'https://ernte-teilen.org',
-    stack: ['TypeScript', 'React', 'TanStack Query', 'Tailwind CSS', 'Node.js', 'Express'],
-  },
-  {
-    name: 'Datenguide',
-    period: '2019',
-    role: 'Full-stack engineer',
-    description:
-      'Made official German statistics accessible to journalists and the public: a GraphQL and REST API on top of Federal Statistical Office data, and a web UI for queries. Funded by the Prototype Fund.',
-    href: 'https://github.com/datenguide',
-    stack: ['GraphQL', 'Node.js', 'React', 'Next.js', 'Gatsby', 'Material UI'],
-  },
-];
+export function formatPeriod({ start, end }: Pick<Role, 'start' | 'end'>): string {
+  return end && end !== start ? `${start}–${end}` : String(start);
+}

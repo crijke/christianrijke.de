@@ -1,41 +1,73 @@
 ---
 import { Picture } from 'astro:assets';
 import portrait from '../assets/portrait2.jpg';
-import { About } from '../components/About';
-import { Contact } from '../components/Contact';
-import { CopyEmailButton } from '../components/CopyEmailButton';
-import { Experience } from '../components/Experience';
-import { Hero } from '../components/Hero';
+import { ExternalLink } from '../components/ExternalLink';
 import { Projects } from '../components/Projects';
-import { Skills } from '../components/Skills';
+import { Section } from '../components/Section';
 import { Work } from '../components/Work';
-import { home } from '../content/home';
 import { profile } from '../content/profile';
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const { email } = profile;
+const { github, linkedin, xing } = profile.links;
 ---
 
 <BaseLayout>
-  <Hero>
-    <Picture
-      slot="portrait"
-      src={portrait}
-      alt={`Portrait of ${profile.name}`}
-      width={384}
-      height={480}
-      fit="cover"
-      widths={[192, 384, 576, 384]}
-      sizes="(min-width: 80rem) 24rem, (min-width: 64rem) 20rem, (min-width: 40rem) 9rem, 7rem"
-      formats={['avif', 'webp']}
-      loading="eager"
-      fetchpriority="high"
-    />
-  </Hero>
-  <About showFocusAreas={home.showFocusAreas} />
-  {home.showWork && <Work showProjects={!home.showProjects} />}
-  {home.showProjects && <Projects />}
-  <Experience />
-  <Skills />
-  <Contact>
-    <CopyEmailButton slot="actions" client:idle email={profile.email} />
-  </Contact>
+  <div class="column pt-12 sm:pt-16">
+    <header class="flex items-center gap-4">
+      <Picture
+        src={portrait}
+        alt={`Portrait of ${profile.name}`}
+        width={64}
+        height={64}
+        fit="cover"
+        position="top"
+        densities={[1, 2, 3]}
+        formats={['avif', 'webp']}
+        loading="eager"
+        class="size-16 rounded-full bg-line object-cover"
+      />
+      <div>
+        <h1 class="text-xl font-semibold">{profile.name}</h1>
+        <p class="text-muted">
+          {profile.role} in {profile.location}
+        </p>
+      </div>
+    </header>
+
+    <div class="mt-10 space-y-5">
+      <p>
+        I’ve been building software for about twenty years, most of it for the web and most of the
+        last decade in TypeScript. I like owning a feature from the data model to the UI, so my days
+        are split between React frontends, Node.js services, APIs and SQL.
+      </p>
+      <p>
+        The part I keep coming back to is the frontend: applications with real complexity, the
+        design systems behind them, and architectures that let several teams ship into one product.
+        Most recently I spent three years on the frontend platform team of Lexware Office, moving a
+        set of separate apps onto a shared micro-frontend shell.
+      </p>
+      <p>
+        Before that I studied computer science at ETH Zürich and wrote Java: point-of-sale systems
+        for Swiss Federal Railways and PostFinance, then payment processing at SIX Group. I moved to
+        Berlin in 2013. These days agentic AI tools are a normal part of how I work.
+      </p>
+    </div>
+
+    <Projects />
+    <Work />
+
+    <Section id="contact" title="Contact">
+      <p>
+        <a href={`mailto:${email}`} class="link">
+          {email}
+        </a>
+      </p>
+      <p class="mt-3">
+        I’m also on <ExternalLink href={github.href}>{github.label}</ExternalLink>,{' '}
+        <ExternalLink href={linkedin.href}>{linkedin.label}</ExternalLink> and{' '}
+        <ExternalLink href={xing.href}>{xing.label}</ExternalLink>.
+      </p>
+    </Section>
+  </div>
 </BaseLayout>

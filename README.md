@@ -4,19 +4,15 @@ My personal website: a single page about my work as a software engineer.
 
 ## Stack and approach
 
+- **Deliberately plain.** One text column, system fonts, neutral colours, no animations. It's
+  meant to read like a personal home page, not a portfolio.
 - **[Astro](https://astro.build) with React components.** The sections are React components
-  that Astro renders to static HTML at build time. Only the parts that need interactivity ship
-  JavaScript: the section navigation, the theme toggle and the copy button
-  (`client:` directives in `src/pages/index.astro` and `src/components/SiteHeader.astro`).
+  that Astro renders to static HTML at build time. The only JavaScript on the page is the theme
+  toggle in the footer (`client:load` in `src/components/SiteFooter.astro`).
 - **Tailwind CSS v4**, configured in CSS (`src/styles/global.css`). Colour tokens use
   `light-dark()`, so utilities follow the active colour scheme without `dark:` variants.
-- **Scroll-driven animations in plain CSS** (`animation-timeline: view()` / `scroll()`): the
-  experience timeline fills as you scroll, entries fade in, and the header shows reading
-  progress. They're progressive enhancement: browsers without support and users with
-  `prefers-reduced-motion` get the final, static state.
-- **Theme switching with the View Transitions API**, revealing the new theme from the toggle.
   A small inline script applies a stored theme before first paint.
-- **No third-party requests.** Fonts and images are self-hosted and optimised at build time.
+- **No third-party requests.** Images are self-hosted and optimised at build time.
 
 Content lives in typed modules in `src/content/`, separate from the components.
 
