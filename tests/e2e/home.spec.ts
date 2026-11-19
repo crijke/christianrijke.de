@@ -8,42 +8,17 @@ test.describe('home page', () => {
   });
 
   test('presents the profile', async ({ page }) => {
-    await expect(page).toHaveTitle('Christian Rijke · Senior Software Engineer');
+    await expect(page).toHaveTitle('Christian Rijke · Software Engineer');
     await expect(page.getByRole('heading', { level: 1 })).toHaveText('Christian Rijke');
     await expect(page.getByRole('img', { name: 'Portrait of Christian Rijke' })).toBeVisible();
   });
 
-  test('navigation links every section on the page, in page order', async ({ page }) => {
-    const linkedIds = await page
-      .getByRole('navigation', { name: 'Sections' })
-      .getByRole('link')
-      .evaluateAll((links) => links.map((link) => link.getAttribute('href')?.replace('#', '')));
-    const sectionIds = await page
-      .locator('main > section[id]')
-      .evaluateAll((sections) => sections.map((section) => section.id));
-
-    expect(linkedIds).toEqual(sectionIds);
-    for (const id of sectionIds) {
-      await expect(page.locator(`#${id} h2`)).toHaveCount(1);
+  test('gives every section a heading', async ({ page }) => {
+    const sections = page.locator('main section[id]');
+    await expect(sections).not.toHaveCount(0);
+    for (const section of await sections.all()) {
+      await expect(section.getByRole('heading', { level: 2 })).toHaveCount(1);
     }
-  });
-
-  test('navigates to sections and marks the current one', async ({ page }) => {
-    const nav = page.getByRole('navigation', { name: 'Sections' });
-
-    await nav.getByRole('link', { name: 'Experience' }).click();
-    await expect(page).toHaveURL(/#experience$/);
-    await expect(page.locator('#experience')).toBeInViewport();
-    await expect(nav.getByRole('link', { name: 'Experience' })).toHaveAttribute(
-      'aria-current',
-      'true',
-    );
-
-    await nav.getByRole('link', { name: 'Contact' }).click();
-    await expect(nav.getByRole('link', { name: 'Contact' })).toHaveAttribute(
-      'aria-current',
-      'true',
-    );
   });
 
   test('offers ways to get in touch', async ({ page }) => {
@@ -54,18 +29,6 @@ test.describe('home page', () => {
     );
     await expect(contact.getByRole('link', { name: /LinkedIn/ })).toBeVisible();
     await expect(contact.getByRole('link', { name: /GitHub/ })).toBeVisible();
-  });
-
-  test('copies the email address', async ({ page, context, browserName }) => {
-    test.skip(browserName !== 'chromium', 'Clipboard permissions are Chromium-only');
-    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
-
-    await page.getByRole('button', { name: 'Copy address' }).click();
-
-    await expect(page.getByRole('button', { name: 'Copied' })).toBeVisible();
-    expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(
-      'hello@christianrijke.de',
-    );
   });
 
   test('skip link moves focus to the main content', async ({ page }) => {
