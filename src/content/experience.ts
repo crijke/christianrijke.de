@@ -15,8 +15,8 @@ export interface Era {
 /** Career history grouped into eras, newest first. */
 export const eras: Era[] = [
   {
-    id: 'frontend-platforms',
-    title: 'Frontend platforms & architecture',
+    id: 'web-platforms',
+    title: 'Web applications & platforms',
     roles: [
       {
         start: 2023,
@@ -31,7 +31,7 @@ export const eras: Era[] = [
         organisation: 'Netzwerk Solidarische Landwirtschaft',
         title: 'Full-Stack Engineer',
         summary:
-          'New React frontend for Ernte Teilen, email campaign API and UI, and user account management.',
+          'New React frontend for Ernte Teilen, plus a Node.js and Express API for email campaigns and user account management.',
       },
       {
         start: 2021,
@@ -39,7 +39,7 @@ export const eras: Era[] = [
         organisation: 'Scout24',
         title: 'Full-Stack Engineer',
         summary:
-          'Account migration SPA, company-wide Okta rollout, API usage reporting and a self-service portal for B2B customers.',
+          'Account migration SPA, Spring Boot services that migrated all user accounts to the company-wide Okta platform, API usage reporting and a self-service portal for B2B customers.',
       },
       {
         start: 2020,
@@ -47,7 +47,7 @@ export const eras: Era[] = [
         organisation: 'IBM iX Berlin',
         title: 'Frontend Architect & Engineer',
         summary:
-          'Frontend architecture for EDEKA’s assortment planning application; relaunch of the Basler Versicherungen corporate websites.',
+          'Frontend architecture and the API contract with the backend team for EDEKA’s assortment planning application; relaunch of the Basler Versicherungen corporate websites.',
       },
       {
         start: 2019,
@@ -55,7 +55,7 @@ export const eras: Era[] = [
         organisation: 'Datenguide',
         title: 'Full-Stack Engineer',
         summary:
-          'GraphQL and REST APIs for official statistics, a React query UI and the project website.',
+          'GraphQL and REST APIs in Node.js for official statistics, a React query UI and the project website.',
       },
       {
         start: 2019,
@@ -83,8 +83,8 @@ export const eras: Era[] = [
     ],
   },
   {
-    id: 'full-stack',
-    title: 'Full-stack & services',
+    id: 'services',
+    title: 'Services & backend architecture',
     roles: [
       {
         start: 2017,

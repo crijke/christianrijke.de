@@ -9,7 +9,7 @@ export const profile = {
   email: 'hello@christianrijke.de',
   url: 'https://christianrijke.de',
   description:
-    'Senior software engineer with 20 years of experience. Frontend architecture, design systems and complex web applications, plus the full stack behind them.',
+    'Senior software engineer with 20 years of experience. TypeScript web applications across the stack: React, Node.js, APIs and SQL, plus frontend architecture and design systems.',
   links: {
     linkedin: { label: 'LinkedIn', href: 'https://www.linkedin.com/in/christian-rijke/' },
     github: { label: 'GitHub', href: 'https://github.com/crijke' },
