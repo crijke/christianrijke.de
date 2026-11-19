@@ -15,14 +15,12 @@ export function Hero({ portrait }: HeroProps) {
     >
       <div className="grid items-center gap-10 lg:grid-cols-[1fr_20rem] lg:gap-20 xl:grid-cols-[1fr_24rem]">
         <div>
-          <p className="eyebrow">{profile.role}</p>
           <h1 id="hero-heading" className="mt-4 text-display font-semibold">
             {profile.name}
           </h1>
           <p className="mt-8 max-w-2xl text-xl leading-relaxed text-muted sm:text-2xl sm:leading-relaxed">
             I build <span className="text-ink">web applications in TypeScript</span>, from the React
-            frontend to the <span className="text-ink">APIs and data</span> behind it, and the
-            architecture and design systems that let several teams ship into one product.
+            frontend to the <span className="text-ink">APIs and data</span>, the architecture and the design systems.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-5">
             <a href="#contact" className="button">

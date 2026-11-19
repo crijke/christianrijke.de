@@ -1,6 +1,6 @@
 ---
 import { Picture } from 'astro:assets';
-import portrait from '../assets/portrait.jpg';
+import portrait from '../assets/portrait2.jpg';
 import { About } from '../components/About';
 import { Contact } from '../components/Contact';
 import { CopyEmailButton } from '../components/CopyEmailButton';
@@ -20,10 +20,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       slot="portrait"
       src={portrait}
       alt={`Portrait of ${profile.name}`}
-      width={768}
-      height={960}
+      width={384}
+      height={480}
       fit="cover"
-      widths={[192, 384, 576, 768]}
+      widths={[192, 384, 576, 384]}
       sizes="(min-width: 80rem) 24rem, (min-width: 64rem) 20rem, (min-width: 40rem) 9rem, 7rem"
       formats={['avif', 'webp']}
       loading="eager"
