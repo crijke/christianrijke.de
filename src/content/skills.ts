@@ -9,14 +9,28 @@ export const skillGroups: SkillGroup[] = [
     items: [
       'TypeScript',
       'React',
+      'Next.js (SSR & static)',
       'React Router / Remix',
       'TanStack Query',
-      'Next.js',
       'Astro',
       'HTML & CSS',
       'Tailwind CSS',
       'MUI',
       'Vite',
+    ],
+  },
+  {
+    title: 'Backend & data',
+    items: [
+      'Node.js',
+      'Express',
+      'REST & GraphQL APIs',
+      'Next.js API routes',
+      'PostgreSQL',
+      'SQL schema design & migrations',
+      'Knex & Kysely',
+      'Java & Spring Boot',
+      'JPA / Hibernate',
     ],
   },
   {
@@ -28,6 +42,17 @@ export const skillGroups: SkillGroup[] = [
       'API design',
       'Accessibility (WCAG)',
       'Internationalisation',
+      'Headless CMS integration (Prismic, AEM)',
+    ],
+  },
+  {
+    title: 'Cloud & delivery',
+    items: [
+      'AWS (Lambda, CloudFormation, DynamoDB)',
+      'Docker',
+      'GitHub Actions',
+      'Bitbucket',
+      'Jenkins',
     ],
   },
   {
@@ -35,19 +60,9 @@ export const skillGroups: SkillGroup[] = [
     items: ['Vitest', 'Jest', 'React Testing Library', 'Playwright', 'Cypress', 'JUnit'],
   },
   {
-    title: 'Backend & cloud',
-    items: [
-      'Node.js',
-      'Express',
-      'AWS (Lambda, CloudFormation, DynamoDB)',
-      'Docker',
-      'PostgreSQL',
-      'Java & Spring Boot',
-    ],
-  },
-  {
     title: 'AI-assisted engineering',
     items: [
+      'Claude Code',
       'Agentic coding workflows',
       'Agent skills',
       'LLM-ready knowledge bases',
