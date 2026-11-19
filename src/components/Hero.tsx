@@ -20,9 +20,9 @@ export function Hero({ portrait }: HeroProps) {
             {profile.name}
           </h1>
           <p className="mt-8 max-w-2xl text-xl leading-relaxed text-muted sm:text-2xl sm:leading-relaxed">
-            I build <span className="text-ink">web applications and products</span> and the{' '}
-            <span className="text-ink">frontend platforms</span> behind them, from architecture and
-            design systems to the services they run on.
+            I build <span className="text-ink">web applications in TypeScript</span>, from the React
+            frontend to the <span className="text-ink">APIs and data</span> behind it, and the
+            architecture and design systems that let several teams ship into one product.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-5">
             <a href="#contact" className="button">

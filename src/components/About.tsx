@@ -17,14 +17,20 @@ export function About({ showFocusAreas = true }: AboutProps) {
             management software and built the service backend for a line of Wi-Fi speakers.
           </p>
           <p>
-            Since then my focus has moved to the web frontend, though rarely just the surface of it.
-            Most of my work is on applications with real complexity, on the design systems behind
-            them, and on architectures that let several teams ship into one product. Most recently I
-            spent three years working with the frontend platform team of Lexware Office.
+            Since then I’ve mostly built web applications in TypeScript, often across the whole
+            stack: React and Next.js frontends, Node.js and Express services, REST and GraphQL APIs,
+            SQL databases with Knex or Kysely, and infrastructure on AWS. In Java projects I work
+            with Spring Boot and JPA.
           </p>
           <p>
-            I still work across the stack when a project calls for it, with Node.js, AWS or Java and
-            Spring Boot, and agentic AI tools have become a normal part of how I build software.
+            My deepest expertise is on the frontend: applications with real complexity, the design
+            systems behind them, and architectures that let several teams ship into one product.
+            Most recently I spent three years working with the frontend platform team of Lexware
+            Office.
+          </p>
+          <p>
+            I like owning a feature from the data model to the UI, and agentic AI tools have become
+            a normal part of how I build software.
           </p>
         </div>
         <dl className="h-fit divide-y divide-line rounded-2xl bg-surface px-6 py-2">
