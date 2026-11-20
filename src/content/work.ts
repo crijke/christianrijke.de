@@ -89,7 +89,7 @@ export const roles: Role[] = [
     start: 2014,
     end: 2016,
     organisation: 'Lautsprecher Teufel',
-    title: 'Full-Stack Developer',
+    title: 'Full-Stack Engineer',
     summary:
       'Service architecture for the Raumfeld Wi-Fi speakers: update and media servers, analytics, internal dashboards and a desktop streaming app.',
   },
@@ -97,7 +97,7 @@ export const roles: Role[] = [
     start: 2012,
     end: 2013,
     organisation: 'Finn GmbH · OpenProject',
-    title: 'Full-Stack Developer',
+    title: 'Full-Stack Engineer',
     summary:
       'Plugin architecture on Ruby on Rails, an AngularJS frontend prototype and performance analysis for the open-source project management suite.',
   },
